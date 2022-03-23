@@ -24,10 +24,10 @@ const AuthForm = () => {
     let url;
     if (isLogin) {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[Web API key]";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCO16X8NFEH1VFm9xpkybkuAICh9zraESM"; // add your own Web Api key from firebase project settings
     } else {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[Web API key]";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCO16X8NFEH1VFm9xpkybkuAICh9zraESM"; // add your own Web Api key from firebase project settings
     }
     fetch(url, {
       method: "POST",

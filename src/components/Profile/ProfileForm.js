@@ -18,7 +18,7 @@ const ProfileForm = () => {
     // add validation
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=[Web API key]",
+      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCO16X8NFEH1VFm9xpkybkuAICh9zraESM", // add your own Web Api key from firebase project settings
       {
         method: "POST",
         body: JSON.stringify({
