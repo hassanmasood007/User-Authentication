@@ -4,6 +4,9 @@ import AuthContext from "../../store/auth.context";
 
 import classes from "./AuthForm.module.css";
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,11 +26,9 @@ const AuthForm = () => {
     setIsLoading(true);
     let url;
     if (isLogin) {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCO16X8NFEH1VFm9xpkybkuAICh9zraESM"; // add your own Web Api key from firebase project settings
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_WEB_KEY}`; // add your own Web Api key from firebase project settings
     } else {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCO16X8NFEH1VFm9xpkybkuAICh9zraESM"; // add your own Web Api key from firebase project settings
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_WEB_KEY}`; // add your own Web Api key from firebase project settings
     }
     fetch(url, {
       method: "POST",
